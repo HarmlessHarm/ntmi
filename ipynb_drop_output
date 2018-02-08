@@ -78,8 +78,8 @@ ipy_version = int(json_in["nbformat"])-1 # nbformat is 1 more than actual versio
 def strip_output_from_cell(cell):
     if "outputs" in cell:
         cell["outputs"] = []
-    if "prompt_number" in cell:
-        del cell["prompt_number"]
+    if "execution_count" in cell:                                                  
+        cell["execution_count"] = None 
 
 
 if ipy_version == 2:
